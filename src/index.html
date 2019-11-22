@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+</head>
+<body>
+  <div class="root">
+    <header class="header root__section">
+      <img src="<%=require('./images/logo.svg')%>" alt="mesto logo" class="logo">
+    </header>
+    <div class="profile root__section">
+      <div class="user-info">
+        <div class="user-info__photo"></div>
+        <div class="user-info__data">
+          <h1 class="user-info__name">  </h1>
+          <p class="user-info__job"> </p>
+          <button class="user-info__button_edit">Edit</button>
+          <button class="button user-info__button">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="places-list root__section"> </div>
+    
+    <div id="popup-forms"> 
+    
+      <div class="popup" id="popup-card"> 
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form" name="new">
+          <div> 
+            <input 
+            type="text" 
+            name="name" 
+            required 
+            minlength="2" 
+            maxlength="30" 
+            class="popup__input popup__input_type_name" 
+            placeholder="Название">
+            <span class="error-message"></span>
+          </div>
+          <div>
+            <input 
+            type="URL" 
+            name="link" 
+            required 
+            class="popup__input popup__input_type_link-url" 
+            placeholder="Ссылка на картинку">
+            <span class="error-message"></span>
+          </div>
+
+          <button disabled type="submit" class="button popup__button">+</button>
+        </form>
+      </div>
+      </div>
+
+    <div class="popup" id="popup-profile"> 
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form novalidate class="popup__form" name="profile">
+          <div>
+            <input 
+            type="text" 
+            required 
+            minlength="2" 
+            maxlength="30"  
+            name="name" 
+            class="popup__input popup__input_type_name" 
+            placeholder="Имя">
+            <span class="error-message"></span>
+          </div>
+
+          <div>
+            <input type="text" 
+            required 
+            minlength="2" 
+            maxlength="30" 
+            name="job" 
+            class="popup__input popup__input_type_job" 
+            placeholder="О себе">
+            <span class="error-message"></span>
+          </div>
+            
+          <button disabled type="submit" class="button popup__button" id="profile-button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup" id="popup-big-img"> 
+      <div class="popup__content" id="popup-bg">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+      </div>
+    </div>
+
+  </div>
+  </div>
+</body>
+<script type='module' src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script> 
+</html>
