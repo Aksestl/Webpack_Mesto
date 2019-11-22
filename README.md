@@ -7,5 +7,6 @@
     * CSS
     * JS
     * Webpack
+    * Hot reloading
     * GIT 
 * To deploy the project, follow the link https://aksestl.github.io/Webpack_Mesto/
