@@ -6,7 +6,6 @@
     * HTML
     * CSS
     * JS
-    * Node.js
     * Webpack
     * Hot reloading
     * GIT 
